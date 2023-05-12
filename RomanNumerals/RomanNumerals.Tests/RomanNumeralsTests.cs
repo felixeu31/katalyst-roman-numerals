@@ -17,7 +17,7 @@ namespace RomanNumerals.Tests
     {
         public static string Convert(int amount)
         {
-            throw new NotImplementedException();
+            return string.Empty;
         }
     }
 }
