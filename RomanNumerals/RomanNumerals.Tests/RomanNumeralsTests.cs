@@ -1,5 +1,9 @@
 namespace RomanNumerals.Tests
 {
+    /// <summary>
+    /// Roman numerals tests
+    /// </summary>
+    /// <remarks>dotnet watch test --project .\RomanNumerals.Tests\RomanNumerals.Tests.csproj</remarks>
     public class RomanNumeralsTests
     {
         [Fact]
@@ -10,14 +14,6 @@ namespace RomanNumerals.Tests
 
             // Assert
             Assert.Equal(string.Empty, result);
-        }
-    }
-
-    public class RomanNumerals
-    {
-        public static string Convert(int amount)
-        {
-            return string.Empty;
         }
     }
 }
