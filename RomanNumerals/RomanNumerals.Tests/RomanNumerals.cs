@@ -7,6 +7,7 @@ public class RomanNumerals
         { 1, "I" },
         { 2, "II" },
         { 3, "III" },
+        { 5, "V" },
     };
 
     public static string Convert(int amount)
