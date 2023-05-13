@@ -2,7 +2,7 @@ namespace RomanNumerals.Tests;
 
 public class RomanNumerals
 {
-    private static Dictionary<int, string> _romanSymbols = new()
+    private static readonly Dictionary<int, string> RomanSymbols = new()
     {
         { 1, "I" },
         { 5, "V" },
@@ -15,9 +15,9 @@ public class RomanNumerals
 
     public static string Convert(int amount)
     {
-        if (_romanSymbols.ContainsKey(amount))
+        if (RomanSymbols.ContainsKey(amount))
         {
-            return _romanSymbols[amount];
+            return RomanSymbols[amount];
         }
 
         return string.Empty;
