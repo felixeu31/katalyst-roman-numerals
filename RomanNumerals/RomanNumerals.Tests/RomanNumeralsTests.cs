@@ -15,5 +15,13 @@ namespace RomanNumerals.Tests
             // Assert
             Assert.Equal(string.Empty, result);
         }
+
+        [Fact]
+        public void Convert_ShouldReturnI_When1()
+        {
+            string result = RomanNumerals.Convert(1);
+
+            Assert.Equal("I", result);
+        }
     }
 }
