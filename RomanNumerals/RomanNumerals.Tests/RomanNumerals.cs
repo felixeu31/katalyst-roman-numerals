@@ -14,6 +14,11 @@ public class RomanNumerals
             return "II";
         }
 
+        if (amount.Equals(3))
+        {
+            return "III";
+        }
+
         return string.Empty;
     }
 }
