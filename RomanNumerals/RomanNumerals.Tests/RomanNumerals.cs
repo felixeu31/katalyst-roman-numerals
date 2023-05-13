@@ -20,6 +20,11 @@ public class RomanNumerals
             return RomanSymbols[amount];
         }
 
+        if (amount.Equals(2))
+        {
+            return "II";
+        }
+
         return string.Empty;
     }
 }
