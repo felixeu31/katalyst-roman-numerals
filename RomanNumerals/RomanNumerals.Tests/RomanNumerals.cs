@@ -9,6 +9,11 @@ public class RomanNumerals
             return "I";
         }
 
+        if (amount.Equals(2))
+        {
+            return "II";
+        }
+
         return string.Empty;
     }
 }
