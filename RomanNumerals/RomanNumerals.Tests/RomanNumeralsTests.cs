@@ -20,6 +20,7 @@ namespace RomanNumerals.Tests
         [InlineData(1, "I")]
         [InlineData(2, "II")]
         [InlineData(3, "III")]
+        [InlineData(5, "V")]
         public void Convert_ShouldReturnRomanNumeralRepresentation_WhenDirectConversion(int arabicNumber, string romanNumeral)
         {
             string result = RomanNumerals.Convert(arabicNumber);
