@@ -18,9 +18,12 @@ namespace RomanNumerals.Tests
 
         [Theory]
         [InlineData(1, "I")]
-        [InlineData(2, "II")]
-        [InlineData(3, "III")]
         [InlineData(5, "V")]
+        [InlineData(10, "X")]
+        [InlineData(50, "L")]
+        [InlineData(100, "C")]
+        [InlineData(500, "D")]
+        [InlineData(1000, "M")]
         public void Convert_ShouldReturnRomanNumeralRepresentation_WhenDirectConversion(int arabicNumber, string romanNumeral)
         {
             string result = RomanNumerals.Convert(arabicNumber);
