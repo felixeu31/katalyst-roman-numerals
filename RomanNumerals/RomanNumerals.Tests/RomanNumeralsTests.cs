@@ -16,27 +16,15 @@ namespace RomanNumerals.Tests
             Assert.Equal(string.Empty, result);
         }
 
-        [Fact]
-        public void Convert_ShouldReturnI_When1()
+        [Theory]
+        [InlineData(1, "I")]
+        [InlineData(2, "II")]
+        [InlineData(3, "III")]
+        public void Convert_ShouldReturnRomanNumeralRepresentation_WhenDirectConversion(int arabicNumber, string romanNumeral)
         {
-            string result = RomanNumerals.Convert(1);
+            string result = RomanNumerals.Convert(arabicNumber);
 
-            Assert.Equal("I", result);
-        }
-
-        [Fact]
-        public void Convert_ShouldReturnII_When2()
-        {
-            string result = RomanNumerals.Convert(2);
-
-            Assert.Equal("II", result);
-        }
-        [Fact]
-        public void Convert_ShouldReturnIII_When3()
-        {
-            string result = RomanNumerals.Convert(3);
-
-            Assert.Equal("III", result);
+            Assert.Equal(romanNumeral, result);
         }
     }
 }
