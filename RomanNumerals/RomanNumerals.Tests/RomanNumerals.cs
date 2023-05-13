@@ -2,21 +2,18 @@ namespace RomanNumerals.Tests;
 
 public class RomanNumerals
 {
+    private static Dictionary<int, string> _romanSymbols = new()
+    {
+        { 1, "I" },
+        { 2, "II" },
+        { 3, "III" },
+    };
+
     public static string Convert(int amount)
     {
-        if (amount.Equals(1))
+        if (_romanSymbols.ContainsKey(amount))
         {
-            return "I";
-        }
-
-        if (amount.Equals(2))
-        {
-            return "II";
-        }
-
-        if (amount.Equals(3))
-        {
-            return "III";
+            return _romanSymbols[amount];
         }
 
         return string.Empty;
