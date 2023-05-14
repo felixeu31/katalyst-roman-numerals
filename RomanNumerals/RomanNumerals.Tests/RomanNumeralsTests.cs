@@ -38,5 +38,14 @@ namespace RomanNumerals.Tests
 
             Assert.Equal("II", result);
         }
+
+        [Fact]
+        public void Convert_ShouldReturnIII_When3()
+        {
+
+            string result = RomanNumerals.Convert(3);
+
+            Assert.Equal("III", result);
+        }
     }
 }
