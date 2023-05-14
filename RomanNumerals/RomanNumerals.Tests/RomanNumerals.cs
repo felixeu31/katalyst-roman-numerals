@@ -20,6 +20,11 @@ public class RomanNumerals
             return RomanSymbols[amount];
         }
 
+        if (5 - 1 == amount)
+        {
+            return $"{RomanSymbols[1]}{RomanSymbols[5]}";
+        }
+
         if (amount.Equals(2))
         {
             return $"{RomanSymbols[1]}{RomanSymbols[1]}"; 
