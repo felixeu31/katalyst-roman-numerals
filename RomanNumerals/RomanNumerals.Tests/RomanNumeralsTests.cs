@@ -31,30 +31,16 @@ namespace RomanNumerals.Tests
             Assert.Equal(romanNumeral, result);
         }
 
-        [Fact]
-        public void Convert_ShouldReturnII_When2(){
-
-            string result = RomanNumerals.Convert(2);
-
-            Assert.Equal("II", result);
-        }
-
-        [Fact]
-        public void Convert_ShouldReturnIII_When3()
+        [Theory]
+        [InlineData(2, "II")]
+        [InlineData(3, "III")]
+        [InlineData(4, "IV")]
+        public void Convert_ShouldReturnRomanNumeralRepresentation_WhenComposeConversion(int arabicNumber, string romanNumeral)
         {
 
-            string result = RomanNumerals.Convert(3);
+            string result = RomanNumerals.Convert(arabicNumber);
 
-            Assert.Equal("III", result);
-        }
-
-        [Fact]
-        public void Convert_ShouldReturnIV_When4()
-        {
-
-            string result = RomanNumerals.Convert(4);
-
-            Assert.Equal("IV", result);
+            Assert.Equal(romanNumeral, result);
         }
     }
 }
