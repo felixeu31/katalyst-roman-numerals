@@ -23,6 +23,10 @@ public class RomanNumerals
         var romanOrder1Value = 1;
         var romanOrder2Value = 5;
 
+        if(amount == (romanOrder2Value + romanOrder1Value))
+        {
+            return $"{RomanSymbols[romanOrder2Value]}{RomanSymbols[romanOrder1Value]}";
+        }
 
         if (amount == (romanOrder2Value - romanOrder1Value))
         {
