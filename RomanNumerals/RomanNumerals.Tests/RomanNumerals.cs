@@ -23,33 +23,34 @@ public class RomanNumerals
         var romanOrder1Value = 1;
         var romanOrder2Value = 5;
 
-        if(amount == (romanOrder2Value + romanOrder1Value))
-        {
-            return $"{RomanSymbols[romanOrder2Value]}{RomanSymbols[romanOrder1Value]}";
-        }
-        
-        if(amount == (romanOrder2Value + romanOrder1Value * 2))
-        {
-            return $"{RomanSymbols[romanOrder2Value]}{RomanSymbols[romanOrder1Value]}{RomanSymbols[romanOrder1Value]}";
-        }
-        
         if(amount == (romanOrder2Value + romanOrder1Value * 3))
         {
             return $"{RomanSymbols[romanOrder2Value]}{RomanSymbols[romanOrder1Value]}{RomanSymbols[romanOrder1Value]}{RomanSymbols[romanOrder1Value]}";
         }
 
+        if(amount == (romanOrder2Value + romanOrder1Value * 2))
+        {
+            return $"{RomanSymbols[romanOrder2Value]}{RomanSymbols[romanOrder1Value]}{RomanSymbols[romanOrder1Value]}";
+        }
+        
+        if(amount == (romanOrder2Value + romanOrder1Value))
+        {
+            return $"{RomanSymbols[romanOrder2Value]}{RomanSymbols[romanOrder1Value]}";
+        }
+        
         if (amount == (romanOrder2Value - romanOrder1Value))
         {
             return $"{RomanSymbols[romanOrder1Value]}{RomanSymbols[romanOrder2Value]}";
         }
 
-        if (amount == (romanOrder1Value * 2))
-        {
-            return $"{RomanSymbols[romanOrder1Value]}{RomanSymbols[romanOrder1Value]}"; 
-        }
         if (amount == (romanOrder1Value * 3))
         {
             return $"{RomanSymbols[romanOrder1Value]}{RomanSymbols[romanOrder1Value]}{RomanSymbols[romanOrder1Value]}";
+        }
+
+        if (amount == (romanOrder1Value * 2))
+        {
+            return $"{RomanSymbols[romanOrder1Value]}{RomanSymbols[romanOrder1Value]}"; 
         }
 
         return string.Empty;
