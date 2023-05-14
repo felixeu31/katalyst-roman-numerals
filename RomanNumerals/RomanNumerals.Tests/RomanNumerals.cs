@@ -22,9 +22,14 @@ public class RomanNumerals
 
         var romanOrder1Value = 1;
         var romanOrder2Value = 5;
-        var romanOrder3Value = 5;
-        
-        if(amount == (romanOrder2Value + romanOrder1Value * 3))
+        var romanOrder3Value = 10;
+
+        if (amount == (romanOrder3Value - romanOrder1Value))
+        {
+            return $"{RomanSymbols[romanOrder1Value]}{RomanSymbols[romanOrder3Value]}";
+        }
+
+        if (amount == (romanOrder2Value + romanOrder1Value * 3))
         {
             return $"{RomanSymbols[romanOrder2Value]}{RomanSymbols[romanOrder1Value]}{RomanSymbols[romanOrder1Value]}{RomanSymbols[romanOrder1Value]}";
         }
