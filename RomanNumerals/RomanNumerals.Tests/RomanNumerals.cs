@@ -15,31 +15,35 @@ public class RomanNumerals
 
     public static string Convert(int amount)
     {
+        string centsRomanNumeral = string.Empty;
+        string tensRomanNumeral = string.Empty;
+        string unitsRomanNumeral = string.Empty;
         if (amount is >= 100 and < 1000)
         {
             var digits = amount.ToString().Select(x => (int)char.GetNumericValue(x)).ToList();
 
-            var centsRomanNumeral = ConvertToRomanNumeral(digits[0] * 100, 100, 500, 1000);
+            centsRomanNumeral = ConvertToRomanNumeral(digits[0] * 100, 100, 500, 1000);
 
-            var tensRomanNumeral = ConvertToRomanNumeral(digits[1] * 10, 10, 50, 100);
+            tensRomanNumeral = ConvertToRomanNumeral(digits[1] * 10, 10, 50, 100);
 
-            var unitsRomanNumeral = ConvertToRomanNumeral(digits[2], 1, 5, 10);
-
-            return $"{centsRomanNumeral}{tensRomanNumeral}{unitsRomanNumeral}";
+            unitsRomanNumeral = ConvertToRomanNumeral(digits[2], 1, 5, 10);
         }
-        
-        if (amount is >= 10 and < 100)
+        else if (amount is >= 10 and < 100)
         {
             var digits = amount.ToString().Select(x => (int)char.GetNumericValue(x)).ToList();
 
-            var tensRomanNumeral = ConvertToRomanNumeral(digits[0] * 10, 10, 50, 100);
+            tensRomanNumeral = ConvertToRomanNumeral(digits[0] * 10, 10, 50, 100);
 
-            var unitsRomanNumeral = ConvertToRomanNumeral(digits[1], 1, 5, 10);
+            unitsRomanNumeral = ConvertToRomanNumeral(digits[1], 1, 5, 10);
 
-            return $"{tensRomanNumeral}{unitsRomanNumeral}";
+        }
+        else
+        {
+            unitsRomanNumeral = ConvertToRomanNumeral(amount, 1, 5, 10);
         }
 
-        return ConvertToRomanNumeral(amount, 1, 5, 10);
+
+        return $"{centsRomanNumeral}{tensRomanNumeral}{unitsRomanNumeral}";
 
     }
 
