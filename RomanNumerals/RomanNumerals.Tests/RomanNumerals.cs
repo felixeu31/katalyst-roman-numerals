@@ -15,11 +15,23 @@ public class RomanNumerals
 
     public static string Convert(int amount)
     {
-        return ConvertToRomanNumeral(amount, 10, 1, 5);
+        if (amount is > 10 and < 100)
+        {
+            var digits = amount.ToString().Select(x => (int)char.GetNumericValue(x)).ToList();
+
+            var tensRomanNumeral = ConvertToRomanNumeral(digits[0] * 10, 10, 50, 100);
+
+            var unitsRomanNumeral = ConvertToRomanNumeral(digits[1], 1, 5, 10);
+
+            return $"{tensRomanNumeral}{unitsRomanNumeral}";
+        }
+
+        return ConvertToRomanNumeral(amount, 1, 5, 10);
+
     }
 
-    private static string ConvertToRomanNumeral(int amount, int superiorOrderRomanValue, int inferiorOrderRomanValue,
-        int middleOrderRomanValue)
+    private static string ConvertToRomanNumeral(int amount, int inferiorOrderRomanValue,
+        int middleOrderRomanValue, int superiorOrderRomanValue)
     {
 
         if (RomanSymbols.ContainsKey(amount))
