@@ -22,7 +22,7 @@ public class RomanNumerals
 
         if (amount.Equals(2))
         {
-            return "II";
+            return $"{RomanSymbols[1]}{RomanSymbols[1]}"; 
         }
 
         return string.Empty;
