@@ -44,6 +44,7 @@ namespace RomanNumerals.Tests
         [InlineData(66, "LXVI")]
         [InlineData(99, "XCIX")]
         [InlineData(294, "CCXCIV")]
+        [InlineData(2019, "MMXIX")]
         public void Convert_ShouldReturnRomanNumeralRepresentation_WhenComposeConversion(int arabicNumber, string romanNumeral)
         {
 

@@ -15,13 +15,21 @@ public class RomanNumerals
 
     public static string Convert(int amount)
     {
+        int millsDigit = 0;
         int hundredsDigit = 0;
         int tensDigit = 0;
         int unitsDigit = 0;
 
         var digits = amount.ToString().Select(x => (int)char.GetNumericValue(x)).ToList();
 
-        if (amount is >= 100)
+        if (amount >= 1000)
+        {
+            millsDigit = digits[0];
+            hundredsDigit = digits[1];
+            tensDigit = digits[2];
+            unitsDigit = digits[3];
+        }
+        else if (amount is >= 100 and < 1000)
         {
             hundredsDigit = digits[0];
             tensDigit = digits[1];
@@ -37,13 +45,15 @@ public class RomanNumerals
             unitsDigit = digits[0];
         }
 
+        string millsRomanNumeral = ConvertToRomanNumeral(millsDigit * 1000, 1000, 5000, 10000);
+
         string centsRomanNumeral = ConvertToRomanNumeral(hundredsDigit * 100, 100, 500, 1000);
 
         string tensRomanNumeral = ConvertToRomanNumeral(tensDigit * 10, 10, 50, 100);
 
         string unitsRomanNumeral = ConvertToRomanNumeral(unitsDigit, 1, 5, 10);
 
-        return $"{centsRomanNumeral}{tensRomanNumeral}{unitsRomanNumeral}";
+        return $"{millsRomanNumeral}{centsRomanNumeral}{tensRomanNumeral}{unitsRomanNumeral}";
 
     }
 
