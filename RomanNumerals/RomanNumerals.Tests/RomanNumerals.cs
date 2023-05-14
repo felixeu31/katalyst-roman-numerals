@@ -27,6 +27,11 @@ public class RomanNumerals
         {
             return $"{RomanSymbols[romanOrder2Value]}{RomanSymbols[romanOrder1Value]}";
         }
+        
+        if(amount == (romanOrder2Value + romanOrder1Value * 2))
+        {
+            return $"{RomanSymbols[romanOrder2Value]}{RomanSymbols[romanOrder1Value]}{RomanSymbols[romanOrder1Value]}";
+        }
 
         if (amount == (romanOrder2Value - romanOrder1Value))
         {
