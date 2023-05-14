@@ -35,6 +35,7 @@ namespace RomanNumerals.Tests
         [InlineData(2, "II")]
         [InlineData(3, "III")]
         [InlineData(4, "IV")]
+        [InlineData(6, "VI")]
         public void Convert_ShouldReturnRomanNumeralRepresentation_WhenComposeConversion(int arabicNumber, string romanNumeral)
         {
 
