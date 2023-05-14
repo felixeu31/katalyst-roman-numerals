@@ -22,7 +22,8 @@ public class RomanNumerals
 
         var romanOrder1Value = 1;
         var romanOrder2Value = 5;
-
+        var romanOrder3Value = 5;
+        
         if(amount == (romanOrder2Value + romanOrder1Value * 3))
         {
             return $"{RomanSymbols[romanOrder2Value]}{RomanSymbols[romanOrder1Value]}{RomanSymbols[romanOrder1Value]}{RomanSymbols[romanOrder1Value]}";
