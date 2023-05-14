@@ -24,6 +24,10 @@ public class RomanNumerals
         {
             return $"{RomanSymbols[1]}{RomanSymbols[1]}"; 
         }
+        if (amount.Equals(3))
+        {
+            return $"{RomanSymbols[1]}{RomanSymbols[1]}{RomanSymbols[1]}";
+        }
 
         return string.Empty;
     }
