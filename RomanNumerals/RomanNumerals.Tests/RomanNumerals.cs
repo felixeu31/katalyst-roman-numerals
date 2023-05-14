@@ -15,14 +15,17 @@ public class RomanNumerals
 
     public static string Convert(int amount)
     {
+        return ConvertToRomanNumeral(amount, 10, 1, 5);
+    }
+
+    private static string ConvertToRomanNumeral(int amount, int romanOrder3Value, int romanOrder1Value,
+        int romanOrder2Value)
+    {
+
         if (RomanSymbols.ContainsKey(amount))
         {
             return RomanSymbols[amount];
-        }
-
-        var romanOrder1Value = 1;
-        var romanOrder2Value = 5;
-        var romanOrder3Value = 10;
+        } 
 
         if (amount == (romanOrder3Value - romanOrder1Value))
         {
@@ -31,19 +34,20 @@ public class RomanNumerals
 
         if (amount == (romanOrder2Value + romanOrder1Value * 3))
         {
-            return $"{RomanSymbols[romanOrder2Value]}{RomanSymbols[romanOrder1Value]}{RomanSymbols[romanOrder1Value]}{RomanSymbols[romanOrder1Value]}";
+            return
+                $"{RomanSymbols[romanOrder2Value]}{RomanSymbols[romanOrder1Value]}{RomanSymbols[romanOrder1Value]}{RomanSymbols[romanOrder1Value]}";
         }
 
-        if(amount == (romanOrder2Value + romanOrder1Value * 2))
+        if (amount == (romanOrder2Value + romanOrder1Value * 2))
         {
             return $"{RomanSymbols[romanOrder2Value]}{RomanSymbols[romanOrder1Value]}{RomanSymbols[romanOrder1Value]}";
         }
-        
-        if(amount == (romanOrder2Value + romanOrder1Value))
+
+        if (amount == (romanOrder2Value + romanOrder1Value))
         {
             return $"{RomanSymbols[romanOrder2Value]}{RomanSymbols[romanOrder1Value]}";
         }
-        
+
         if (amount == (romanOrder2Value - romanOrder1Value))
         {
             return $"{RomanSymbols[romanOrder1Value]}{RomanSymbols[romanOrder2Value]}";
@@ -56,7 +60,7 @@ public class RomanNumerals
 
         if (amount == (romanOrder1Value * 2))
         {
-            return $"{RomanSymbols[romanOrder1Value]}{RomanSymbols[romanOrder1Value]}"; 
+            return $"{RomanSymbols[romanOrder1Value]}{RomanSymbols[romanOrder1Value]}";
         }
 
         return string.Empty;
