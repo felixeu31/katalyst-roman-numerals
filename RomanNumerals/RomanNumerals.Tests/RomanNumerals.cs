@@ -20,18 +20,21 @@ public class RomanNumerals
             return RomanSymbols[amount];
         }
 
-        if (5 - 1 == amount)
+        var romanOrder1Value = 1;
+        var romanOrder2Value = 5;
+
+        if (amount == (romanOrder2Value - romanOrder1Value))
         {
-            return $"{RomanSymbols[1]}{RomanSymbols[5]}";
+            return $"{RomanSymbols[romanOrder1Value]}{RomanSymbols[romanOrder2Value]}";
         }
 
-        if (amount.Equals(2))
+        if (amount == (romanOrder1Value * 2))
         {
-            return $"{RomanSymbols[1]}{RomanSymbols[1]}"; 
+            return $"{RomanSymbols[romanOrder1Value]}{RomanSymbols[romanOrder1Value]}"; 
         }
-        if (amount.Equals(3))
+        if (amount == (romanOrder1Value * 3))
         {
-            return $"{RomanSymbols[1]}{RomanSymbols[1]}{RomanSymbols[1]}";
+            return $"{RomanSymbols[romanOrder1Value]}{RomanSymbols[romanOrder1Value]}{RomanSymbols[romanOrder1Value]}";
         }
 
         return string.Empty;
