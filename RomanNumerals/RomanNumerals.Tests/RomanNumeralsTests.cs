@@ -40,6 +40,9 @@ namespace RomanNumerals.Tests
         [InlineData(8, "VIII")]
         [InlineData(9, "IX")]
         [InlineData(11, "XI")]
+        [InlineData(16, "XVI")]
+        [InlineData(66, "LXVI")]
+        [InlineData(99, "XCIX")]
         public void Convert_ShouldReturnRomanNumeralRepresentation_WhenComposeConversion(int arabicNumber, string romanNumeral)
         {
 
